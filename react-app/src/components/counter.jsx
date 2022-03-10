@@ -11,6 +11,21 @@ class Counter extends Component {
   //       super()
   //       this.handleIncrement = this.handleIncrement.bind(this)
   //   }
+  constructor(props) {
+    super(props);
+    console.log("Counter - constructor");
+    // undefined props obj
+    console.log("props Counter", props);
+  }
+  // perfect place for making ajax calls
+  componentDidMount() {
+    // i.e. component is in the DOM
+    console.log("Counter -  mounted");
+  }
+  componentDidUpdate() {
+    // when props or state is updated
+    console.log("Counter -  updated");
+  }
   render() {
     let classes = this.dynamicClasses(); //for dynamic classes use method that return dynamic classes
     return (
@@ -23,7 +38,7 @@ class Counter extends Component {
         {/* <img alt="some sea" src={this.state.imageUrl}></img> */}
         <button
           className="btn btn-secondary btn-sm"
-          // onClick={() => this.handleIncrement("hello saud")}
+          // onClick={() => this.handleIncrement("hello hamid")}
           onClick={() => this.props.onIncrement(this.props.id)}
         >
           Increment
